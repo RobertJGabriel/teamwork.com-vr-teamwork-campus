@@ -7,22 +7,22 @@
   </head>
   <body>
     <a-scene>
+      <!-- assets screen -->
       <a-assets>
         <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
         <img id="backgroundTexture" src="./background.jpg">
         <video id="teamwork-office" autoplay="false" loop="true" src="./teamwork-tour.mp4"></video>
       </a-assets>
+      
+      <!-- Video screen -->
+      <a-video src="#teamwork-office" autoplay="false" width="2" height="1" position="0 2 -5" >
+        <a-animation attribute="position" direction="alternate" dur="2000" repeat="indefinite"to="0 2.2 -5"></a-animation>
+        <a-animation attribute="rotation" begin="click" dur="2000" to="360 405 45"></a-animation>
+        <a-animation attribute="scale" begin="mouseenter" dur="300" to="2 2 2"></a-animation>
+        <a-animation attribute="scale" begin="mouseleave" dur="300" to="2 2 2"></a-animation>
+      </a-video>
 
-
-        <a-video src="#teamwork-office" autoplay="false" width="2" height="1" position="0 2 -5" >
-          <a-animation attribute="position" direction="alternate" dur="2000" repeat="indefinite"
-            to="0 2.2 -5"></a-animation>
-          <a-animation attribute="rotation" begin="click" dur="2000" to="360 405 45"></a-animation>
-          <a-animation attribute="scale" begin="mouseenter" dur="300" to="2 2 2"></a-animation>
-          <a-animation attribute="scale" begin="mouseleave" dur="300" to="2 2 2"></a-animation>
-        </a-video>
-
-
+      <!-- Background -->
       <a-sky height="2048" radius="30" src="#backgroundTexture" theta-length="90" width="2048"></a-sky>
       <a-light type="ambient" color="#445451"></a-light>
       <a-light type="point" intensity="2" position="2 4 4"></a-light>
