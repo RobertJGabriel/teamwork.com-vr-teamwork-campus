@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Teamwork.com Tour</title>
+    <meta name="description" content="Teamwork Campus One VR Tour">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+        <img id="backgroundTexture" src="./background.jpg">
+        <video id="teamwork-office" autoplay="false" loop="true" src="./teamwork-tour.mp4"></video>
+      </a-assets>
+
+
+        <a-video src="#teamwork-office" autoplay="false" width="2" height="1" position="0 2 -5" >
+          <a-animation attribute="position" direction="alternate" dur="2000" repeat="indefinite"
+            to="0 2.2 -5"></a-animation>
+          <a-animation attribute="rotation" begin="click" dur="2000" to="360 405 45"></a-animation>
+          <a-animation attribute="scale" begin="mouseenter" dur="300" to="2 2 2"></a-animation>
+          <a-animation attribute="scale" begin="mouseleave" dur="300" to="2 2 2"></a-animation>
+        </a-video>
+
+
+      <a-sky height="2048" radius="30" src="#backgroundTexture" theta-length="90" width="2048"></a-sky>
+      <a-light type="ambient" color="#445451"></a-light>
+      <a-light type="point" intensity="2" position="2 4 4"></a-light>
+      <a-plane src="#groundTexture" rotation="-90 0 0" height="100" width="100"></a-plane>
+      <a-text value="Teamwork.com" color="#fff" position="-1 0.2 -4"scale="1.5 1.5 1.5"></a-text>
+
+      <a-camera>
+        <a-cursor color="#FAFAFA"></a-cursor>
+      </a-camera>
+    </a-scene>
+  </body>
+</html>
